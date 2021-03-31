@@ -4,6 +4,7 @@ namespace App\Listeners\Message;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Notification;
+use App\Notifications\LineNotifyTest;
 use Illuminate\Queue\InteractsWithQueue;
 use LINE\LINEBot\Event\MessageEvent\TextMessage;
 use Revolution\Line\Facades\Bot;

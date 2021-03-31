@@ -20,7 +20,7 @@ class LineBotController
      */
     public function index()
     {
-        //
+        // return view()
     }
 
     /**

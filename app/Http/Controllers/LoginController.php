@@ -28,9 +28,12 @@ class LoginController extends Controller
         $user = Socialite::driver('line-login')->user();
 
         $loginUser = User::updateOrCreate([
+            'line_id' => $user->id
+        ], [
             'name' => 'User',
             'avatar' => $user->avatar,
-            'access_token' => $user->refreshToken,
+            'access_token' => $user->token,
+            'refresh_token' => $user->refreshToken,
         ]);
 
         auth()->login($loginUser, ture);
