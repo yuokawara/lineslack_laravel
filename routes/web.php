@@ -8,6 +8,7 @@ use App\Http\Controllers\PushController;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Revolution\Line\Facades\Bot;
+use Revolution\Line\Messaging\Http\Controllers\WebhookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,7 @@ Route::get('callback', [LoginControlloer::class, 'callback']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/home', Homecontroller::class)->name('home');
+Route::post('webhook', WebhookController::class)->name('webhook');
 
 Route::middleware('auth')->group(function () {
     Route::get('notify/login', [NotifyController::class, 'login'])->name('notify.login');
